@@ -15,10 +15,14 @@ module.exports = {
         test: /\.s[ac]ss$/i,
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
+      {
+        test: /\.html$/i,
+        loader: 'html-loader',
+      },
     ],
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js', '.sass'],
+    extensions: ['.tsx', '.ts', '.js', '.sass', '.html'],
   },
   plugins: [new HtmlWebpackPlugin({ template: './src/index.html' })],
 };
