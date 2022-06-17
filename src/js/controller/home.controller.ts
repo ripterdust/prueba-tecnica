@@ -1,7 +1,8 @@
-import home from '../views/home.html';
+import view from '../views/home.html';
 
-export default (content: HTMLElement) => {
-  const div = document.createElement('div') as HTMLDivElement;
+export default (content: HTMLDivElement) => {
+  const div = content;
+  div.innerHTML = view;
 
-  console.log(content, div, home);
+  return div;
 };

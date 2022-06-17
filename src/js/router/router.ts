@@ -11,7 +11,7 @@ export const router = (route: string) => {
 
   switch (route) {
     case '#/home': {
-      pages.home(content);
+      content.appendChild(pages.home(content));
       break;
     }
     default: {
