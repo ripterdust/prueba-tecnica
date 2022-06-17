@@ -36,13 +36,13 @@ export default (content: HTMLDivElement) => {
   const deleteBTN = document.querySelectorAll<HTMLElement>('.deleteTodo');
 
   deleteBTN.forEach((el: HTMLElement) => {
-    el.removeEventListener('click', () => true);
     el.addEventListener('click', (e: Event) => {
       if (e.target) {
         const button = el as HTMLButtonElement;
         // @ts-ignore
         const id: number = button.getAttribute('idTodo');
         deleteTodo(id);
+        getTodos(content);
       }
     });
   });
