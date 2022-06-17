@@ -20,7 +20,7 @@ export const getTodos = (content: HTMLDivElement) => {
   todos.innerHTML = '';
   data.reverse().map((todo: TodoModel) => {
     todos.innerHTML += `
-        <div class="todo box" id="todo" idTodo="${todo.id}">
+        <div class="todo box animate__animated animate__fadeIn" id="todo" idTodo="${todo.id}">
             <div class="title title-todo" todoId="${todo.id}" id="title-${todo.id}">${todo.name}</div>
             <div class="description" id="description-${todo.id}">${todo.description}</div>
             <button class="button deleteTodo mt" idTodo="${todo.id}">
