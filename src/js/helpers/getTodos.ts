@@ -21,7 +21,7 @@ export const getTodos = (content: HTMLDivElement) => {
             <div class="title" todoId="${todo.id}" id="todo-${todo.id}">${todo.name}</div>
             <div class="description">${todo.description}</div>
             <button class="button deleteTodo" idTodo="${todo.id}">
-                <i class="fa-solid fa-trash-can"></i>
+                <i class="fa-solid fa-trash-can" idTodo="${todo.id}"></i>
             </button>
         </div>
     `;
