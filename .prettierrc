@@ -1,10 +1,4 @@
 {
     "singleQuote": true,
-    "comma-dangle": ["error", {
-        "arrays": "allways",
-        "objects": "allways",
-        "imports": "allways",
-        "exports": "allways",
-        "functions": "allways"
-    }]
+    "trailingComma": "all"
 }

@@ -15,5 +15,6 @@ interface todoModel {
 export const deleteTodo = (id: number) => {
   const array: todoModel[] = JSON.parse(localStorage.notes);
   const sorted: todoModel[] = quickSort(array);
-  binarySearch(sorted, id);
+  const founded = binarySearch(sorted, id);
+  console.log(founded);
 };
