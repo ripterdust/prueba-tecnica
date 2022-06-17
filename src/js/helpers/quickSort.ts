@@ -1,3 +1,8 @@
+/*
+  Sort function
+  @param array : todoModel
+*/
+
 interface todoModel {
   name: string;
   description: string;
@@ -10,13 +15,18 @@ export const quickSort = (array: todoModel[]): todoModel[] => {
   const pivot: todoModel = array[midd];
   const pivotId: number = pivot.id;
 
-  array.map((todo: todoModel) => {
-    if (todo.id !== pivotId) {
-      console.log('hola');
-    }
+  let lArr: todoModel[] = [];
+  let rArr: todoModel[] = [];
 
-    return true;
+  array.map((todo: todoModel) => {
+    if (todo.id === pivotId) return true;
+    if (todo.id < pivotId) return lArr.push(todo);
+
+    return rArr.push(todo);
   });
 
-  return [{ name: 'hola', description: 'hola', id: 13 }];
+  lArr = quickSort(lArr);
+  rArr = quickSort(rArr);
+
+  return [...lArr, pivot, ...rArr];
 };
