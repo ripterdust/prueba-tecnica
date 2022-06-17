@@ -17,7 +17,7 @@ export const deleteTodo = (id: number) => {
   const sorted: todoModel[] = quickSort(array);
   const founded = binarySearch(sorted, id);
   // @ts-ignore
-  sorted.splice(founded.index);
+  sorted.splice(founded.index, 1);
 
   localStorage.notes = JSON.stringify(sorted);
 };

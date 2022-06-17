@@ -1,4 +1,3 @@
-import { deleteTodo } from '../helpers/deleteTodo';
 import { getTodos } from '../helpers/getTodos';
 import { save } from '../helpers/save';
 import view from '../views/home.html';
@@ -30,21 +29,6 @@ export default (content: HTMLDivElement) => {
     };
     save(data);
     getTodos(content);
-  });
-
-  // Delete button
-  const deleteBTN = document.querySelectorAll<HTMLElement>('.deleteTodo');
-
-  deleteBTN.forEach((el: HTMLElement) => {
-    el.addEventListener('click', (e: Event) => {
-      if (e.target) {
-        const button = el as HTMLButtonElement;
-        // @ts-ignore
-        const id: number = button.getAttribute('idTodo');
-        deleteTodo(id);
-        getTodos(content);
-      }
-    });
   });
 
   return div;

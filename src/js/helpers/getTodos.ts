@@ -3,6 +3,8 @@
     @param content : HTMLDivElement
 */
 
+import { deleteTodo } from './deleteTodo';
+
 interface TodoModel {
   name: string;
   description: string;
@@ -26,6 +28,22 @@ export const getTodos = (content: HTMLDivElement) => {
         </div>
     `;
     return true;
+  });
+
+  // Delete button
+  const deleteBTN = document.querySelectorAll<HTMLElement>('.deleteTodo');
+
+  deleteBTN.forEach((el: HTMLElement) => {
+    el.removeEventListener('click', () => true);
+    el.addEventListener('click', (e: Event) => {
+      if (e.target) {
+        const button = el as HTMLButtonElement;
+        // @ts-ignore
+        const id: number = button.getAttribute('idTodo');
+        deleteTodo(id);
+        getTodos(content);
+      }
+    });
   });
   return content;
 };
