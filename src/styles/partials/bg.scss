@@ -1,5 +1,7 @@
-.bg {
-  height: 100vh;
-  width: 100vw;
-  position: relative;
+.top {
+  width: 100%;
+  height: 30vh;
+  background: $primary;
+  position: absolute;
+  z-index: -1;
 }
