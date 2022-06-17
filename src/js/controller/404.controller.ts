@@ -1,3 +1,3 @@
 export default () => {
-    window.location.hash = '#/home';
+  window.location.hash = '#/home';
 };
