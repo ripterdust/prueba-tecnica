@@ -1,3 +1,4 @@
+import { getTodos } from '../helpers/getTodos';
 import { save } from '../helpers/save';
 import view from '../views/home.html';
 
@@ -12,6 +13,8 @@ export default (content: HTMLDivElement) => {
   const div = content;
   div.innerHTML = view;
 
+  // Getting todos
+  getTodos(content);
   // Form to add TODOs
   const form = document.querySelector('.form') as HTMLFormElement;
   const name = document.querySelector('#name') as HTMLInputElement;
@@ -25,6 +28,7 @@ export default (content: HTMLDivElement) => {
       description: desc.value,
     };
     save(data);
+    getTodos(content);
   });
 
   return div;
