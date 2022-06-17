@@ -15,7 +15,7 @@ export const getTodos = (content: HTMLDivElement) => {
   const data = JSON.parse(elements);
   const todos = document.querySelector('#todos') as HTMLDivElement;
   todos.innerHTML = '';
-  data.map((todo: TodoModel) => {
+  data.reverse().map((todo: TodoModel) => {
     todos.innerHTML += `
         <div class="todo box" id="todo" idTodo="${todo.id}">
             <div class="title" todoId="${todo.id}" id="todo-${todo.id}">${todo.name}</div>
