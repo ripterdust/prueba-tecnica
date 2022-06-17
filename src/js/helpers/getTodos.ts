@@ -57,5 +57,6 @@ export const getTodos = (content: HTMLDivElement) => {
       }
     });
   });
+
   return content;
 };

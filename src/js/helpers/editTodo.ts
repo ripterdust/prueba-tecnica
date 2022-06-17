@@ -15,6 +15,8 @@ export const editTodo = (e: Event) => {
     `#description-${id}`,
   ) as HTMLInputElement;
   // @ts-ignore
+  document.querySelector('#id').value = id;
+  // @ts-ignore
   document.querySelector('#name-edit').value = title.innerHTML;
   const desc = document.querySelector('#description-edit');
   // @ts-ignore
