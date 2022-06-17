@@ -3,6 +3,7 @@
     @param id: number
 */
 
+import { binarySearch } from './binarySearch';
 import { quickSort } from './quickSort';
 
 interface todoModel {
@@ -12,9 +13,7 @@ interface todoModel {
 }
 
 export const deleteTodo = (id: number) => {
-  console.log(id);
-
   const array: todoModel[] = JSON.parse(localStorage.notes);
   const sorted: todoModel[] = quickSort(array);
-  console.log(sorted);
+  binarySearch(sorted, id);
 };
