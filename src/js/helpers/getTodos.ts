@@ -20,8 +20,8 @@ export const getTodos = (content: HTMLDivElement) => {
   data.reverse().map((todo: TodoModel) => {
     todos.innerHTML += `
         <div class="todo box" id="todo" idTodo="${todo.id}">
-            <div class="title title-todo" todoId="${todo.id}" id="todo-${todo.id}">${todo.name}</div>
-            <div class="description">${todo.description}</div>
+            <div class="title title-todo" todoId="${todo.id}" id="title-${todo.id}">${todo.name}</div>
+            <div class="description" id="description-${todo.id}">${todo.description}</div>
             <button class="button deleteTodo" idTodo="${todo.id}">
                 <i class="fa-solid fa-trash-can" idTodo="${todo.id}"></i>
             </button>
@@ -54,6 +54,22 @@ export const getTodos = (content: HTMLDivElement) => {
       if (e.target) {
         const editModal = document.querySelector('#edit') as HTMLDivElement;
         editModal.classList.toggle('hidden');
+        // @ts-ignore
+        const nameTodo: HTMLDivElement = e.target;
+        // @ts-ignore
+        const id: number = nameTodo.getAttribute('todoid');
+
+        const title = document.querySelector(
+          `#title-${id}`,
+        ) as HTMLInputElement;
+        const description = document.querySelector(
+          `#description-${id}`,
+        ) as HTMLInputElement;
+        // @ts-ignore
+        document.querySelector('#name-edit').value = title.innerHTML;
+        const desc = document.querySelector('#description-edit');
+        // @ts-ignore
+        desc.value = description.innerHTML;
       }
     });
   });
