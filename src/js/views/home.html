@@ -1,40 +1,40 @@
-<form action="/" class="form box">
+<form action="/" class="form box" id="form">
 
     <div class="title">
         New TODO
         <button type="submit" class="button" id="submitButton">New TODO</button>
     </div>
-    <div class="form-section">
-        <label for="title" class="form-section-label">Title</label>
-        <input type="text" name="title" id="name" class="form-section-input" required>
+    <div class="form-control">
+        <input type="text" class="form-control-input" autocomplete="off" placeholder=" " id="name" name="name"
+            required />
+        <label for="name" class="form-control-label">Title</label>
     </div>
-    <div class="form-section">
-        <label for="description" class="form-section-label">Description</label>
-        <input type="text" name="title" id="desc" class="form-section-input" required>
+    <div class="form-control">
+        <input type="text" class="form-control-input" id="desc"  autocomplete="off" placeholder=" " id="name" name="name" required />
+        <label for="name" class="form-control-label">Description</label>
     </div>
-
 </form>
 
 <div class="mt-1 todos" id="todos"></div>
 
 <!-- Edit modal -->
 
-<div class="edit hidden" id="edit">
+<div class="edit hidden form" id="edit">
     <form action="/" class="form-edit box" id="editForm">
     
         <div class="title">
             Edit todo
-            <button type="submit" class="button" id="submitButton">New TODO</button>
+            <button type="submit" class="button" id="submitButton">Save</button>
         </div>
         <input type="hidden" id="id">
-        <div class="form-section">
-            <label for="title" class="form-section-label">Title</label>
-            <input type="text" name="title" id="name-edit" class="form-section-input" required>
+        <div class="form-control">
+            <input type="text" class="form-control-input" autocomplete="off" placeholder=" " id="name-edit" name="name" required />
+            <label for="name" class="form-control-label">Title</label>
         </div>
-        <div class="form-section">
-            <label for="description" class="form-section-label">Description</label>
-            <input type="text" name="title" id="description-edit" class="form-section-input" required>
+        <div class="form-control">
+            <input type="text" class="form-control-input" id="description-edit" autocomplete="off" placeholder=" " id="name" name="name"
+                required />
+            <label for="name" class="form-control-label">Description</label>
         </div>
-    
     </form>
 </div>

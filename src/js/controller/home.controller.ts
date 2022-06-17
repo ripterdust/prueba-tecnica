@@ -17,7 +17,7 @@ export default (content: HTMLDivElement) => {
   // Getting todos
   getTodos(content);
   // Form to add TODOs
-  const form = document.querySelector('.form') as HTMLFormElement;
+  const form = document.querySelector('#form') as HTMLFormElement;
   const name = document.querySelector('#name') as HTMLInputElement;
   const desc = document.querySelector('#desc') as HTMLInputElement;
 
