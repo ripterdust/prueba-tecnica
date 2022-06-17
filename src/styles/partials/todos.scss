@@ -1,0 +1,19 @@
+.todos {
+  display: grid;
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 1em;
+  row-gap: 1em;
+
+  .todo {
+    transition: 0.2s ease-in-out;
+    &:hover {
+      transform: scale(1.03);
+    }
+    &:first-child {
+      grid-column: 1/3;
+      grid-row: 1/3;
+    }
+  }
+}
