@@ -16,3 +16,24 @@
 </form>
 
 <div class="mt-1 todos" id="todos"></div>
+
+<!-- Edit modal -->
+
+<div class="edit hidden" id="edit">
+    <form action="/" class="form-edit box" id="editForm">
+    
+        <div class="title">
+            Edit todo
+            <button type="submit" class="button" id="submitButton">New TODO</button>
+        </div>
+        <div class="form-section">
+            <label for="title" class="form-section-label">Title</label>
+            <input type="text" name="title" id="name" class="form-section-input" required>
+        </div>
+        <div class="form-section">
+            <label for="description" class="form-section-label">Description</label>
+            <input type="text" name="title" id="desc" class="form-section-input" required>
+        </div>
+    
+    </form>
+</div>

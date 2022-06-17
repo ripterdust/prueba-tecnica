@@ -20,7 +20,7 @@ export const getTodos = (content: HTMLDivElement) => {
   data.reverse().map((todo: TodoModel) => {
     todos.innerHTML += `
         <div class="todo box" id="todo" idTodo="${todo.id}">
-            <div class="title" todoId="${todo.id}" id="todo-${todo.id}">${todo.name}</div>
+            <div class="title title-todo" todoId="${todo.id}" id="todo-${todo.id}">${todo.name}</div>
             <div class="description">${todo.description}</div>
             <button class="button deleteTodo" idTodo="${todo.id}">
                 <i class="fa-solid fa-trash-can" idTodo="${todo.id}"></i>
@@ -42,6 +42,18 @@ export const getTodos = (content: HTMLDivElement) => {
         const id: number = button.getAttribute('idTodo');
         deleteTodo(id);
         getTodos(content);
+      }
+    });
+  });
+
+  // Edit todo
+  const todoName = document.querySelectorAll<HTMLElement>('.title-todo');
+  todoName.forEach((el: HTMLElement) => {
+    el.removeEventListener('click', () => true);
+    el.addEventListener('click', (e: Event) => {
+      if (e.target) {
+        const editModal = document.querySelector('#edit') as HTMLDivElement;
+        editModal.classList.toggle('hidden');
       }
     });
   });
