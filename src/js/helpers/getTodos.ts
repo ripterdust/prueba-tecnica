@@ -23,7 +23,7 @@ export const getTodos = (content: HTMLDivElement) => {
         <div class="todo box" id="todo" idTodo="${todo.id}">
             <div class="title title-todo" todoId="${todo.id}" id="title-${todo.id}">${todo.name}</div>
             <div class="description" id="description-${todo.id}">${todo.description}</div>
-            <button class="button deleteTodo" idTodo="${todo.id}">
+            <button class="button deleteTodo mt" idTodo="${todo.id}">
                 <i class="fa-solid fa-trash-can" idTodo="${todo.id}"></i>
             </button>
         </div>
