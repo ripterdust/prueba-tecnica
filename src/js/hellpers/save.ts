@@ -8,6 +8,12 @@ interface todoModel {
   description: string;
   id: number;
 }
+
+/*
+  Save function
+  @param object : saveParamsModel
+  @return boolean
+*/
 export const save = ({ name, description }: saveParamsModel) => {
   const elements = localStorage.notes;
 
