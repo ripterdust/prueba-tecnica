@@ -1,3 +1,4 @@
+import { save } from '../hellpers/save';
 import view from '../views/home.html';
 
 /*
@@ -13,8 +14,17 @@ export default (content: HTMLDivElement) => {
 
   // Form to add TODOs
   const form = document.querySelector('.form') as HTMLFormElement;
-  form.addEventListener('submit', (e) => {
+  const name = document.querySelector('#name') as HTMLInputElement;
+  const desc = document.querySelector('#desc') as HTMLInputElement;
+
+  form.addEventListener('submit', (e: Event) => {
     e.preventDefault();
+    if (name.value == null && desc.value == null) return;
+    const data: { name: string; description: string } = {
+      name: name.value,
+      description: desc.value,
+    };
+    save(data);
   });
 
   return div;
