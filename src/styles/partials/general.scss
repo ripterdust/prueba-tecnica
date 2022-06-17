@@ -18,10 +18,11 @@ body {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
+  align-items: center;
   padding: 15vh 0 0 0;
+  flex-direction: column;
 }
 
 // Box general styles
@@ -56,4 +57,8 @@ body {
   &:active {
     transform: scale(0.9);
   }
+}
+
+.mt-1 {
+  margin-top: 2em;
 }
